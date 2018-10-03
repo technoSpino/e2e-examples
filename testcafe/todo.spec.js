@@ -6,6 +6,7 @@ fixture `TestFixture`
 
 test('add new item', async t => {
     await t
+            .setTestSpeed( .5 )
             .typeText(AngularJSSelector.byModel('todoList.todoText'), 'new item')
             .click(Selector('[value="add"]'))   
             .expect(AngularJSSelector.byRepeater('todo in todoList.todos').count).eql(3);
